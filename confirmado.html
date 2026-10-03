@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>E-mail confirmado · CleanDiet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <img class="logo" src="logo.png" alt="CleanDiet">
+    <div class="badge" id="icon">✓</div>
+    <h1 id="title">E-mail confirmado!</h1>
+    <p id="text">Sua conta está pronta. Volte ao app CleanDiet e entre com seu e-mail e senha.</p>
+    <small>Pode fechar esta página.</small>
+  </main>
+  <script>
+    // O Supabase devolve erros (ex.: link expirado) no fragmento da URL.
+    // Os tokens também chegam aqui: removemos da barra de endereço sem usá-los.
+    var params = new URLSearchParams(location.hash.slice(1) || location.search.slice(1));
+    if (params.get('error') || params.get('error_code')) {
+      document.getElementById('icon').textContent = '!';
+      document.getElementById('title').textContent = 'Link expirado ou já usado';
+      document.getElementById('text').textContent =
+        'Se você já confirmou, é só entrar no app. Se não, faça o cadastro de novo para receber outro link.';
+    }
+    if (location.hash || location.search) history.replaceState(null, '', location.pathname);
+  </script>
+</body>
+</html>
