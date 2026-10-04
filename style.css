@@ -12,3 +12,14 @@ img.logo { width: 170px; height: auto; margin-bottom: 16px; }
 h1 { font-size: 22px; margin: 0 0 8px; }
 p { color: var(--sub); line-height: 1.5; margin: 0 0 12px; }
 small { display: block; margin-top: 20px; color: var(--sub); font-size: 12px; }
+/* Formulário (redefinir senha). */
+form { text-align: left; margin-top: 8px; }
+label { display: block; font-size: 13px; color: var(--sub); margin: 12px 0 6px; }
+input { width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid #2C4A36; background: var(--bg);
+  color: var(--text); font-size: 15px; }
+input:focus { outline: 2px solid var(--green); border-color: transparent; }
+button { width: 100%; margin-top: 18px; padding: 14px; border: 0; border-radius: 12px; background: #2E7D32; color: #fff;
+  font-size: 15px; font-weight: 700; cursor: pointer; }
+button:disabled { opacity: .6; cursor: default; }
+.error { color: #EF9A9A; font-size: 13px; margin-top: 10px; min-height: 1em; }
+.hidden { display: none; }
